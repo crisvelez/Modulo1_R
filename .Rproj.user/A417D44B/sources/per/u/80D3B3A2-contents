@@ -1,0 +1,15 @@
+edad <- c(18,19,NA,18,24,17,22,15,22,25)
+sexo <- c(0,1,0,0,1,0,0,1,1,0)
+estudios <- c(1,2,0,1,3,2,3,1,2,3)
+class(edad)
+
+# Definir los factores
+
+sexo = factor(sexo, levels = c(0,1), labels = c("Hombre", "Mujer"))
+estudios = factor(estudios, levels = c(0,1,2,3), labels = c("Sin estudios", "Primaria", "Secundaria", "Universitario"))
+
+# Dataframe
+misDatos = data.frame(edad, sexo, estudios)
+misDatos
+
+str(misDatos)

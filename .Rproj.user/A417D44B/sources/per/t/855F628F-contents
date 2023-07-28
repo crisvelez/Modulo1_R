@@ -1,0 +1,26 @@
+setwd("G:/Mi unidad/Cristian/Cristian/UNIVERSIDAD/Diplomado/Modulo 1/Data")
+
+# Declaramos una variable para el dataframe
+enoe <- read_xlsx("mu_enoe.xlsx")
+
+#Identificamos el tipo de archivo que tenemos
+class(enoe)
+
+# Consultamos el tamaño del DF
+dim(enoe)
+
+# Identificamos las variables del DF
+colnames(enoe)
+
+#Creamos gráficas
+ggplot(data = enoe) + 
+  geom_point(mapping = aes(x = anios_esc, y = ingreso_mensual))
+
+# Creamos mapeo por colores
+ggplot(data = enoe) + 
+  geom_point(mapping = aes(x = anios_esc, y = ingreso_mensual, color = tipo_empleo))
+
+# Por sexo
+ggplot(data = enoe) +
+  geom_point(mapping = aes(x = anios_esc, y = ingreso_mensual,
+                           color = sex))
